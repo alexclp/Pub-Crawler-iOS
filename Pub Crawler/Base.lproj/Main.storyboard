@@ -88,11 +88,30 @@
                     <navigationItem key="navigationItem" id="tUO-tH-Iz5"/>
                     <connections>
                         <outlet property="tableView" destination="xQi-DN-Php" id="ADR-z5-KOB"/>
+                        <segue destination="jqf-6r-djj" kind="show" identifier="showRouteSegue" id="Ocf-0d-Hoc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-401" y="361"/>
+        </scene>
+        <!--Route View Controller-->
+        <scene sceneID="wU9-Bl-YNF">
+            <objects>
+                <viewController id="jqf-6r-djj" customClass="RouteViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6xe-Q2-fqW"/>
+                        <viewControllerLayoutGuide type="bottom" id="qYw-pd-TDd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zKu-DE-3XX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4eb-E4-vBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="361"/>
         </scene>
     </scenes>
 </document>

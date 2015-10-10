@@ -10,4 +10,6 @@
 
 @interface RouteViewController : UIViewController
 
+@property (nonatomic, strong) NSDictionary *routeDetails;
+
 @end

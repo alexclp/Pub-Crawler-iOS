@@ -10,6 +10,7 @@
 #import "IntroTableViewCell.h"
 #import "UIImageEffects.h"
 #import "Networking.h"
+#import "RouteViewController.h"
 
 #define CellIndentifier @"TableViewCell"
 
@@ -17,6 +18,8 @@
 
 @property (nonatomic, strong) NSArray *dataSource;
 @property (nonatomic, strong) NSArray *images;
+
+@property (nonatomic, assign) NSInteger selectedIndex;
 
 @end
 
@@ -26,13 +29,6 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-	/*
-	
-	[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-							 forBarMetrics:UIBarMetricsDefault];
-	self.navigationController.navigationBar.shadowImage = [UIImage new];
-	self.navigationController.navigationBar.translucent = YES;
-	*/
 	 
 	self.title = @"Pub Crawler";
 	
@@ -95,6 +91,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	
+	if (indexPath.row == 0) {
+//		HEADER CLICK
+	} else {
+//		CELL CLICK
+		self.selectedIndex = indexPath.row - 1;
+		[self performSegueWithIdentifier:@"showRouteSegue" sender:self];
+	}
+	
+	
 }
 /*
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -120,4 +126,15 @@
 	}
 }
 */
+
+#pragma mark Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"showRouteSegue"]) {
+		RouteViewController *vc = segue.destinationViewController;
+		
+		vc.routeDetails = [self.dataSource objectAtIndex:self.selectedIndex];
+	}
+}
+
 @end

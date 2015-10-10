@@ -7,6 +7,7 @@
 //
 
 #import "RouteViewController.h"
+#import "UIImageEffects.h"
 
 @interface RouteViewController ()
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+	[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+												  forBarMetrics:UIBarMetricsDefault];
+	self.navigationController.navigationBar.shadowImage = [UIImage new];
+	self.navigationController.navigationBar.translucent = YES;
 }
 
 - (void)didReceiveMemoryWarning {
