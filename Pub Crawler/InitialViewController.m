@@ -45,4 +45,17 @@
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	if (section == 0) {
+		UIImage *image = [UIImage imageNamed:@"headerImage.jpg"];
+		UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+		imageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 235);
+		imageView.contentMode = UIViewContentModeScaleAspectFill;
+		
+		return imageView;
+	}
+
+	return nil;
+}
+
 @end
