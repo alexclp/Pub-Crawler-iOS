@@ -11,6 +11,7 @@
 #import "UIImageEffects.h"
 #import "Networking.h"
 #import "RouteViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 #define CellIndentifier @"TableViewCell"
 
@@ -78,8 +79,6 @@
 	IntroTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIndentifier forIndexPath:indexPath];
 	
 	UIColor *tintColor = [UIColor colorWithWhite:0.3 alpha:0.3];
-
-	int randomNumber = [self generateRandomNumberWithlowerBound:0 upperBound:3];
 	
 	if (indexPath.row == 0) {
 		UIImage *backgroundImage = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:@"headerImage.jpg"] withRadius:30.0 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
@@ -88,10 +87,19 @@
 		cell.backgroundImage.image = backgroundImage;
 		cell.titleLabel.text = @"Explore your city";
 	} else {
-		UIImage *backgroundImage = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:[self.images objectAtIndex:randomNumber]] withRadius:15.0 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
-		cell.backgroundImage.image = backgroundImage;
+//		UIImage *backgroundImage = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:[self.images objectAtIndex:randomNumber]] withRadius:15.0 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
+//		cell.backgroundImage.image = backgroundImage;
 		
 		NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row - 1];
+		
+		[cell.backgroundImage setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[dict objectForKey:@"image"]]] placeholderImage:[UIImage imageNamed:@"beer1.jpg"] success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nonnull response, UIImage * _Nonnull image) {
+			UIImage *newImage = [UIImageEffects imageByApplyingBlurToImage:image withRadius:3 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
+			cell.backgroundImage.image = newImage;
+		} failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nonnull response, NSError * _Nonnull error) {
+			
+		}];
+		
+		
 		cell.titleLabel.text = [dict objectForKey:@"title"];
 	}
 	
