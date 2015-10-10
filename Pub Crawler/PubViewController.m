@@ -21,6 +21,8 @@
     // Do any additional setup after loading the view.
 	[self configureHeader];
 	[self configureDetails];
+	[self zoomToLocation];
+	self.navigationItem.title = [self.pubDetails objectForKey:@"title"];
 	self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
 	[self.navigationController.navigationBar setBackgroundImage:nil
 												  forBarMetrics:UIBarMetricsDefault];
@@ -40,11 +42,11 @@
 	self.priceLabel.attributedText = text;
 	NSMutableString *ratingString = [NSMutableString string];
 	
-	for (int i = 0; i < [[self.pubDetails objectForKey:@"rating"] intValue] ; ++i) {
+	for (int i = 0; i < [[self.pubDetails objectForKey:@"raiting"] intValue] ; ++i) {
 		[ratingString appendString:@"*"];
 	}
 	self.ratingLabel.text = ratingString.copy;
-	self.description.text = [self.pubDetails objectForKey:@"description"];
+	self.details.text = [self.pubDetails objectForKey:@"description"];
 	
 }
 
@@ -52,6 +54,17 @@
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		self.headerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.pubDetails objectForKey:@"image"]]]];
 	});
+}
+
+- (void)zoomToLocation {
+	MKCoordinateRegion region;
+	region.center.latitude = [[self.pubDetails objectForKey:@"lat"] doubleValue];
+	region.center.longitude = [[self.pubDetails objectForKey:@"long"] doubleValue];
+	
+	region.span.latitudeDelta = 0.0005;
+	region.span.longitudeDelta = 0.0005;
+	
+	[self.mapView setRegion:region animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

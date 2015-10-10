@@ -135,8 +135,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"showPubSegue"]) {
 		PubViewController *vc = segue.destinationViewController;
-		NSLog(@"INDEX: %@", [[self.routeDetails objectForKey:@"pubs"] objectAtIndex:self.selectedIndex] );
-		vc.pubDetails = [[self.routeDetails objectForKey:@"pubs"] objectAtIndex:self.selectedIndex];
+		NSLog(@"INDEX: %@", [[self.routeDetails objectForKey:@"pubs"] objectAtIndex:self.selectedIndex]);
+//		vc.pubDetails = [[self.routeDetails objectForKey:@"pubs"] objectAtIndex:self.selectedIndex];
+		vc.pubDetails = [NSDictionary dictionaryWithDictionary:[[self.routeDetails objectForKey:@"pubs"] objectAtIndex:self.selectedIndex]];
 	}
 }
 
