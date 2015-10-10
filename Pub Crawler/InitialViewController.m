@@ -9,6 +9,7 @@
 #import "InitialViewController.h"
 #import "IntroTableViewCell.h"
 #import "UIImageEffects.h"
+#import "Networking.h"
 
 #define CellIndentifier @"TableViewCell"
 
@@ -23,6 +24,14 @@
 	// Do any additional setup after loading the view, typically from a nib.
 	
 	self.title = @"Pub Crawler";
+	
+	[[Networking networking] getRoutesWithCompletion:^(NSArray *data, NSError *error) {
+		if (!error) {
+			
+		} else {
+			NSLog(@"Error: %@", error.description);
+		}
+	}];
 }
 
 - (void)didReceiveMemoryWarning {
