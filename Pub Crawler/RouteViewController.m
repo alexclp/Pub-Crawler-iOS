@@ -15,21 +15,34 @@
 
 @implementation RouteViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
+	[self configureHeader];
+	self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+}
+
+- (void)configureHeader {
 	[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
 												  forBarMetrics:UIBarMetricsDefault];
 	self.navigationController.navigationBar.shadowImage = [UIImage new];
 	self.navigationController.navigationBar.translucent = YES;
+	self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 	
-	[self configureHeader];
-}
-
-- (void)configureHeader {
+	
+	self.navigationController.navigationBar.topItem.title = @"";
+	
 	UIColor *tintColor = [UIColor colorWithWhite:0.3 alpha:0.3];
 	self.header.image = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:@"headerImage.jpg"] withRadius:30 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
+	
+	self.titleLabel.text = [self.routeDetails objectForKey:@"title"];
+	self.subtitleLabel.text = @"Lorem ipsum";
 }
 
 - (void)didReceiveMemoryWarning {

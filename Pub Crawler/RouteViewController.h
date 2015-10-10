@@ -11,6 +11,8 @@
 @interface RouteViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UIImageView *header;
+@property (nonatomic, weak) IBOutlet UILabel *titleLabel;
+@property (nonatomic, weak) IBOutlet UILabel *subtitleLabel;
 
 @property (nonatomic, strong) NSDictionary *routeDetails;
 
