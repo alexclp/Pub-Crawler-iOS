@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface InitialViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
 

@@ -6,13 +6,13 @@
 //  Copyright © 2015 Alexandru Clapa. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "InitialViewController.h"
 
-@interface ViewController ()
+@interface InitialViewController ()
 
 @end
 
-@implementation ViewController
+@implementation InitialViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -23,5 +23,9 @@
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
 }
+
+#pragma mark UITableView
+
+
 
 @end
