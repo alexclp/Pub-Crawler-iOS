@@ -166,7 +166,7 @@
 		
 		AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 		NSDictionary *parameters = @{@"to": username.text};
-		[manager POST:[NSString stringWithFormat:@"http://f9df6384.ngrok.io/routes/%@", [self.routeDetails objectForKey:@"_id"]] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+		[manager POST:[NSString stringWithFormat:@"http://f9df6384.ngrok.io/routes/send/%@", [self.routeDetails objectForKey:@"_id"]] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //			NSLog(@"JSON: %@", responseObject);
 			NSLog(@"SENT TEXT");
 		} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
