@@ -63,6 +63,10 @@
 - (void)configureHeader {
 	self.title = @"Pub Crawler";
 	
+	UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share)];
+	self.navigationItem.rightBarButtonItem = shareButton;
+	self.navigationItem.rightBarButtonItem = shareButton;
+	
 	UIColor *tintColor = [UIColor colorWithWhite:0.3 alpha:0.3];
 //	self.header.image = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:@"headerImage.jpg"] withRadius:30 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
 //	[self.header setImageWithURL:[NSURL URLWithString:[self.routeDetails objectForKey:@"image"]]
@@ -157,7 +161,7 @@
 		
 		AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 		NSDictionary *parameters = @{@"to": username.text};
-		[manager POST:[NSString stringWithFormat:@"http://f9df6384.ngrok.io/routes/send/%@", [self.routeDetails objectForKey:@"_id"]] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+		[manager POST:[NSString stringWithFormat:@"http://c920a99d.ngrok.io/routes/send/%@", [self.routeDetails objectForKey:@"_id"]] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
 //			NSLog(@"JSON: %@", responseObject);
 			NSLog(@"SENT TEXT");
 		} failure:^(AFHTTPRequestOperation *operation, NSError *error) {

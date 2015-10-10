@@ -24,12 +24,12 @@
 	[self configureDetails];
 	[self zoomToLocation];
 	self.navigationItem.title = [self.pubDetails objectForKey:@"title"];
-	self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
-	[self.navigationController.navigationBar setBackgroundImage:nil
-												  forBarMetrics:UIBarMetricsDefault];
-	self.navigationController.navigationBar.shadowImage = nil;
-	self.navigationController.navigationBar.translucent = NO;
-	self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+//	self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
+//	[self.navigationController.navigationBar setBackgroundImage:nil
+//												  forBarMetrics:UIBarMetricsDefault];
+//	self.navigationController.navigationBar.shadowImage = nil;
+//	self.navigationController.navigationBar.translucent = NO;
+//	self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 	
 
 }
