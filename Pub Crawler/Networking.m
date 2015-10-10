@@ -24,9 +24,9 @@ static Networking *networking;
 - (void)getRoutesWithCompletion:(void(^)(NSArray *array, NSError *error))completion {
 	AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
 	
-	[manager GET:@"http://110a7847.ngrok.io/routes" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+	[manager GET:@"http://f9df6384.ngrok.io/routes" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 		
-//		NSLog(@"Response object: %@", responseObject);
+		NSLog(@"Response object: %@", responseObject);
 		completion(responseObject, nil);
 		
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {

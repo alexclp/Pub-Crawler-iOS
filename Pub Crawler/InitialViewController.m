@@ -25,8 +25,26 @@
 
 @implementation InitialViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
+	[self.navigationController.navigationBar setBackgroundImage:nil
+												  forBarMetrics:UIBarMetricsDefault];
+	self.navigationController.navigationBar.shadowImage = nil;
+	self.navigationController.navigationBar.translucent = NO;
+	self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+	
+	
+	self.title = @"Pub Crawler";
+}
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	
+	
+	
 	// Do any additional setup after loading the view, typically from a nib.
 
 	 
@@ -104,6 +122,7 @@
 	} else {
 //		CELL CLICK
 		self.selectedIndex = indexPath.row - 1;
+
 		[self performSegueWithIdentifier:@"showRouteSegue" sender:self];
 	}
 	
@@ -139,6 +158,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"showRouteSegue"]) {
 		RouteViewController *vc = segue.destinationViewController;
+		
+		NSLog(@"Array: %@", [self.dataSource objectAtIndex:self.selectedIndex]);
 		
 		vc.routeDetails = [self.dataSource objectAtIndex:self.selectedIndex];
 	}

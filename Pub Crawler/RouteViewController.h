@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface RouteViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface RouteViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView *header;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;

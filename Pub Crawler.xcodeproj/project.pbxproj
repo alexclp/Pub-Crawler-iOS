@@ -24,6 +24,8 @@
 		0F3721641BC93B6000B79A68 /* beer3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F3721631BC93B6000B79A68 /* beer3.jpg */; settings = {ASSET_TAGS = (); }; };
 		0F3721661BC93B6500B79A68 /* beer4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F3721651BC93B6500B79A68 /* beer4.jpeg */; settings = {ASSET_TAGS = (); }; };
 		0F3721691BC94EC800B79A68 /* PubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3721681BC94EC800B79A68 /* PubTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		0F37216B1BC9538A00B79A68 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F37216A1BC9538900B79A68 /* CoreLocation.framework */; };
+		0F37216D1BC954FE00B79A68 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F37216C1BC954FE00B79A68 /* MapKit.framework */; };
 		11615BFBE899838ED951B695 /* libPods-Pub Crawler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBE8D20A7401C5DC649C3CF /* libPods-Pub Crawler.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		0F3721651BC93B6500B79A68 /* beer4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beer4.jpeg; sourceTree = "<group>"; };
 		0F3721671BC94EC800B79A68 /* PubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubTableViewCell.h; sourceTree = "<group>"; };
 		0F3721681BC94EC800B79A68 /* PubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubTableViewCell.m; sourceTree = "<group>"; };
+		0F37216A1BC9538900B79A68 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0F37216C1BC954FE00B79A68 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1EBE8D20A7401C5DC649C3CF /* libPods-Pub Crawler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pub Crawler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1F6E8B958D51F1A49892DD /* Pods-Pub Crawler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pub Crawler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pub Crawler/Pods-Pub Crawler.debug.xcconfig"; sourceTree = "<group>"; };
 		9B719C216989316D204A8F79 /* Pods-Pub Crawler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pub Crawler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pub Crawler/Pods-Pub Crawler.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F37216D1BC954FE00B79A68 /* MapKit.framework in Frameworks */,
+				0F37216B1BC9538A00B79A68 /* CoreLocation.framework in Frameworks */,
 				11615BFBE899838ED951B695 /* libPods-Pub Crawler.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +233,8 @@
 		3DBFCB09D104E97A72DD1527 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0F37216C1BC954FE00B79A68 /* MapKit.framework */,
+				0F37216A1BC9538900B79A68 /* CoreLocation.framework */,
 				1EBE8D20A7401C5DC649C3CF /* libPods-Pub Crawler.a */,
 			);
 			name = Frameworks;
