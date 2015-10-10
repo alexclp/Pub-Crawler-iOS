@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PubViewController : UINavigationController
+@interface PubViewController : UINavigationController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSDictionary *pubDetails;
 @property (nonatomic, assign) NSInteger price;
+
+@property (nonatomic, weak) IBOutlet UIImageView *headerImage;
 
 @end

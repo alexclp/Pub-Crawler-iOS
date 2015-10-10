@@ -32,12 +32,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	
-	self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
-	[self.navigationController.navigationBar setBackgroundImage:nil
-												  forBarMetrics:UIBarMetricsDefault];
-	self.navigationController.navigationBar.shadowImage = nil;
-	self.navigationController.navigationBar.translucent = NO;
-	self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+	
 }
 
 - (void)viewDidLoad {

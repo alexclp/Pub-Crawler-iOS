@@ -36,15 +36,10 @@
 	self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 	
 	
-	self.title = @"Pub Crawler";
 }
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
-	
-	
-	
-	
+	[super viewDidLoad];	
 	// Do any additional setup after loading the view, typically from a nib.
 
 	 
