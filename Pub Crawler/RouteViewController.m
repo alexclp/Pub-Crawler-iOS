@@ -10,6 +10,7 @@
 #import "UIImageEffects.h"
 #import "PubTableViewCell.h"
 #import "PubViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 #define CellIdentifier @"PubCell"
 
@@ -51,6 +52,13 @@
 	
 }
 
+- (void)share {
+
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Share" message:@"Enter the user name" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+	alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+	[alertView show];
+}
+
 - (void)configureHeader {
 	self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
 	[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
@@ -59,14 +67,22 @@
 	self.navigationController.navigationBar.translucent = YES;
 	self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 	
-	
+	UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:@selector(share)];
+	self.navigationItem.rightBarButtonItem = shareButton;
 	self.navigationController.navigationBar.topItem.title = @"";
 	
 	UIColor *tintColor = [UIColor colorWithWhite:0.3 alpha:0.3];
-	self.header.image = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:@"headerImage.jpg"] withRadius:30 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
+//	self.header.image = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:@"headerImage.jpg"] withRadius:30 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
+//	[self.header setImageWithURL:[NSURL URLWithString:[self.routeDetails objectForKey:@"image"]]
+	[self.header setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[self.routeDetails objectForKey:@"image"]]] placeholderImage:[UIImage imageNamed:@"beer1.jpg"] success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nonnull response, UIImage * _Nonnull image) {
+		UIImage *newImage = [UIImageEffects imageByApplyingBlurToImage:image withRadius:3 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
+		self.header.image = newImage;
+	} failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nonnull response, NSError * _Nonnull error) {
+		
+	}];
 	
 	self.titleLabel.text = [self.routeDetails objectForKey:@"title"];
-	self.subtitleLabel.text = @"Lorem ipsum";
+	self.subtitleLabel.text = [self.routeDetails objectForKey:@"description"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,6 +155,10 @@
 //		vc.pubDetails = [[self.routeDetails objectForKey:@"pubs"] objectAtIndex:self.selectedIndex];
 		vc.pubDetails = [NSDictionary dictionaryWithDictionary:[[self.routeDetails objectForKey:@"pubs"] objectAtIndex:self.selectedIndex]];
 	}
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	
 }
 
 @end

@@ -35,7 +35,7 @@
 	[super viewDidLoad];	
 	// Do any additional setup after loading the view, typically from a nib.
 
-	self.images = @[@"beer1.jpg", @"beer2.jpg", @"beer3.jpg", @"beer4.jpg"];
+	self.images = @[@"beer1.jpg", @"beer2.jpg", @"beer3.jpg", @"beer4.jpeg"];
 	
 	[[Networking networking] getRoutesWithCompletion:^(NSArray *data, NSError *error) {
 		if (!error) {

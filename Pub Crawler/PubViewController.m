@@ -7,6 +7,7 @@
 //
 
 #import "PubViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 #define CellIdentifier @"PubCell"
 
@@ -51,9 +52,11 @@
 }
 
 - (void)configureHeader {
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-		self.headerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.pubDetails objectForKey:@"image"]]]];
-	});
+	//dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//		self.headerImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.pubDetails objectForKey:@"image"]]]];
+//	});
+
+	[self.headerImage setImageWithURL:[NSURL URLWithString:[self.pubDetails objectForKey:@"image"]]];
 }
 
 - (void)zoomToLocation {
