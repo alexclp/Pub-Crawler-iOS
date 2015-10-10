@@ -199,6 +199,8 @@
 			children = (
 				0F37211F1BC9178500B79A68 /* InitialViewController.h */,
 				0F3721201BC9178500B79A68 /* InitialViewController.m */,
+				0F3721711BC97B1100B79A68 /* LoginViewController.h */,
+				0F3721721BC97B1100B79A68 /* LoginViewController.m */,
 				0F3721601BC932D500B79A68 /* RouteViewController.h */,
 				0F3721611BC932D500B79A68 /* RouteViewController.m */,
 				0F37216E1BC963F400B79A68 /* PubViewController.h */,
@@ -219,8 +221,6 @@
 		0F3721511BC91E7700B79A68 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0F3721711BC97B1100B79A68 /* LoginViewController.h */,
-				0F3721721BC97B1100B79A68 /* LoginViewController.m */,
 				0F3721521BC91EA400B79A68 /* IntroTableViewCell.h */,
 				0F3721531BC91EA400B79A68 /* IntroTableViewCell.m */,
 				0F3721671BC94EC800B79A68 /* PubTableViewCell.h */,

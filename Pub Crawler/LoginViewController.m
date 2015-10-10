@@ -24,6 +24,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)login:(UIButton *)button {
+	[self performSegueWithIdentifier:@"loginSegue" sender:self];
+}
+
 /*
 #pragma mark - Navigation
 

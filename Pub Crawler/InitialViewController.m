@@ -29,11 +29,13 @@
 	[super viewWillAppear:animated];
 	self.navigationItem.title = @"PubCrawler";
 	self.navigationItem.backBarButtonItem.title = @" ";
+	self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)viewDidLoad {
 	[super viewDidLoad];	
 	// Do any additional setup after loading the view, typically from a nib.
+	
 
 	self.images = @[@"beer1.jpg", @"beer2.jpg", @"beer3.jpg", @"beer4.jpeg"];
 	
