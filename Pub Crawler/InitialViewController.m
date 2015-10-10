@@ -8,6 +8,7 @@
 
 #import "InitialViewController.h"
 #import "IntroTableViewCell.h"
+#import "UIImageEffects.h"
 
 #define CellIndentifier @"TableViewCell"
 
@@ -46,7 +47,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	IntroTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIndentifier forIndexPath:indexPath];
 	
-	cell.backgroundImage.image = [UIImage imageNamed:@"headerImage.jpg"];
+	UIImage *backgroundImage = [UIImageEffects imageByApplyingLightEffectToImage:[UIImage imageNamed:@"headerImage.jpg"]];
+	
+	
+	cell.backgroundImage.image = backgroundImage;
 	cell.titleLabel.text = @"BEER";
 	return cell;
 }

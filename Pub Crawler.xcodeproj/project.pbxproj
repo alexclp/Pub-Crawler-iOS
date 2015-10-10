@@ -16,6 +16,7 @@
 		0F37213F1BC9178500B79A68 /* Pub_CrawlerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F37213E1BC9178500B79A68 /* Pub_CrawlerUITests.m */; };
 		0F37214E1BC91CC800B79A68 /* headerImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F37214D1BC91CC800B79A68 /* headerImage.jpg */; settings = {ASSET_TAGS = (); }; };
 		0F3721541BC91EA400B79A68 /* IntroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3721531BC91EA400B79A68 /* IntroTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		0F3721571BC925DD00B79A68 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3721561BC925DD00B79A68 /* UIImageEffects.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		0F37214D1BC91CC800B79A68 /* headerImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headerImage.jpg; sourceTree = "<group>"; };
 		0F3721521BC91EA400B79A68 /* IntroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroTableViewCell.h; sourceTree = "<group>"; };
 		0F3721531BC91EA400B79A68 /* IntroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroTableViewCell.m; sourceTree = "<group>"; };
+		0F3721551BC925DD00B79A68 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		0F3721561BC925DD00B79A68 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,8 @@
 		0F37214C1BC91CB700B79A68 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				0F3721551BC925DD00B79A68 /* UIImageEffects.h */,
+				0F3721561BC925DD00B79A68 /* UIImageEffects.m */,
 				0F37214D1BC91CC800B79A68 /* headerImage.jpg */,
 			);
 			name = Assets;
@@ -310,6 +315,7 @@
 				0F3721211BC9178500B79A68 /* InitialViewController.m in Sources */,
 				0F37211E1BC9178500B79A68 /* AppDelegate.m in Sources */,
 				0F3721541BC91EA400B79A68 /* IntroTableViewCell.m in Sources */,
+				0F3721571BC925DD00B79A68 /* UIImageEffects.m in Sources */,
 				0F37211B1BC9178500B79A68 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

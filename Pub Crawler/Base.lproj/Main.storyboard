@@ -45,7 +45,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mhs-gQ-o8S">
-                                                    <rect key="frame" x="8" y="0.0" width="584" height="112"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="112"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6g-Yi-LUl">
                                                     <rect key="frame" x="8" y="45" width="584" height="21"/>
@@ -55,10 +55,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="leading" secondItem="mhs-gQ-o8S" secondAttribute="leading" id="0TN-8m-sCg"/>
+                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="leading" secondItem="mhs-gQ-o8S" secondAttribute="leading" constant="8" id="0TN-8m-sCg"/>
                                                 <constraint firstItem="B6g-Yi-LUl" firstAttribute="trailing" secondItem="22M-KZ-cXx" secondAttribute="trailingMargin" id="MMl-d9-6sZ"/>
                                                 <constraint firstItem="B6g-Yi-LUl" firstAttribute="centerY" secondItem="mhs-gQ-o8S" secondAttribute="centerY" id="S91-eq-qb3"/>
-                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="trailing" secondItem="mhs-gQ-o8S" secondAttribute="trailing" id="VXc-YZ-mia"/>
+                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="trailing" secondItem="mhs-gQ-o8S" secondAttribute="trailing" constant="-8" id="VXc-YZ-mia"/>
                                                 <constraint firstItem="mhs-gQ-o8S" firstAttribute="top" secondItem="22M-KZ-cXx" secondAttribute="top" id="W8u-dK-93T"/>
                                                 <constraint firstAttribute="bottom" secondItem="mhs-gQ-o8S" secondAttribute="bottom" id="dcf-53-ePv"/>
                                                 <constraint firstItem="B6g-Yi-LUl" firstAttribute="top" secondItem="22M-KZ-cXx" secondAttribute="topMargin" constant="37" id="gNr-s4-7Tz"/>
