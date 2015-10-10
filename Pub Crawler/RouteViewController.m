@@ -11,6 +11,7 @@
 #import "PubTableViewCell.h"
 #import "PubViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "AFNetworking.h"
 
 #define CellIdentifier @"PubCell"
 
@@ -67,7 +68,7 @@
 	self.navigationController.navigationBar.translucent = YES;
 	self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 	
-	UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:nil action:@selector(share)];
+	UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share)];
 	self.navigationItem.rightBarButtonItem = shareButton;
 	self.navigationController.navigationBar.topItem.title = @"";
 	
@@ -158,7 +159,20 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
 	
+	if([title isEqualToString:@"OK"]) {
+		UITextField *username = [alertView textFieldAtIndex:0];
+		
+		AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+		NSDictionary *parameters = @{@"to": username.text};
+		[manager POST:[NSString stringWithFormat:@"http://f9df6384.ngrok.io/routes/%@", [self.routeDetails objectForKey:@"_id"]] parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//			NSLog(@"JSON: %@", responseObject);
+			NSLog(@"SENT TEXT");
+		} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+			NSLog(@"Error: %@", error);
+		}];
+	}
 }
 
 @end
