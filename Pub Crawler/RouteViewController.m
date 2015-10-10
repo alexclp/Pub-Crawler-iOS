@@ -61,16 +61,7 @@
 }
 
 - (void)configureHeader {
-	self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
-	[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-												  forBarMetrics:UIBarMetricsDefault];
-	self.navigationController.navigationBar.shadowImage = [UIImage new];
-	self.navigationController.navigationBar.translucent = YES;
-	self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-	
-	UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(share)];
-	self.navigationItem.rightBarButtonItem = shareButton;
-	self.navigationController.navigationBar.topItem.title = @"";
+	self.title = @"Pub Crawler";
 	
 	UIColor *tintColor = [UIColor colorWithWhite:0.3 alpha:0.3];
 //	self.header.image = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:@"headerImage.jpg"] withRadius:30 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
