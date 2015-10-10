@@ -15,6 +15,9 @@
 
 @interface InitialViewController ()
 
+@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSArray *images;
+
 @end
 
 @implementation InitialViewController
@@ -25,9 +28,12 @@
 	
 	self.title = @"Pub Crawler";
 	
+	self.images = @[@"beer1.jpg", @"beer2.jpg"];
+	
 	[[Networking networking] getRoutesWithCompletion:^(NSArray *data, NSError *error) {
 		if (!error) {
-			
+			self.dataSource = [NSArray arrayWithArray:data];
+			[self.tableView reloadData];
 		} else {
 			NSLog(@"Error: %@", error.description);
 		}
@@ -39,11 +45,17 @@
 	// Dispose of any resources that can be recreated.
 }
 
+-(int)generateRandomNumberWithlowerBound:(int)lowerBound
+							   upperBound:(int)upperBound {
+	int rndValue = lowerBound + arc4random() % (upperBound - lowerBound);
+	return rndValue;
+}
+
 #pragma mark UITableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-	return 2;
+	return self.dataSource.count + 1;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -55,12 +67,22 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	IntroTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIndentifier forIndexPath:indexPath];
+
+	if (indexPath.row == 0) {
+		UIImage *backgroundImage = [UIImageEffects imageByApplyingDarkEffectToImage:[UIImage imageNamed:@"headerImage.jpg"]];
+		
+		
+		cell.backgroundImage.image = backgroundImage;
+		cell.titleLabel.text = @"Explore your city";
+	} else {
+		NSLog(@"aaaaa");
+		UIImage *backgroundImage = [UIImageEffects imageByApplyingDarkEffectToImage:[UIImage imageNamed:[self.images objectAtIndex:[self generateRandomNumberWithlowerBound:0 upperBound:1]]]];
+		cell.backgroundImage.image = backgroundImage;
+		
+		NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row - 1];
+		cell.titleLabel.text = [dict objectForKey:@"title"];
+	}
 	
-	UIImage *backgroundImage = [UIImageEffects imageByApplyingLightEffectToImage:[UIImage imageNamed:@"headerImage.jpg"]];
-	
-	
-	cell.backgroundImage.image = backgroundImage;
-	cell.titleLabel.text = @"BEER";
 	return cell;
 }
 

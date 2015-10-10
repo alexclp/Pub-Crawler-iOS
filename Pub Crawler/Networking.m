@@ -26,10 +26,11 @@ static Networking *networking;
 	
 	[manager GET:@"http://110a7847.ngrok.io/routes" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 		
-		NSLog(@"Response object: %@", responseObject);
+//		NSLog(@"Response object: %@", responseObject);
+		completion(responseObject, nil);
 		
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-		
+		completion(nil, error);
 	}];
 }
 
