@@ -10,6 +10,8 @@
 
 @interface RouteViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIImageView *header;
+
 @property (nonatomic, strong) NSDictionary *routeDetails;
 
 @end

@@ -32,7 +32,7 @@
 	 
 	self.title = @"Pub Crawler";
 	
-	self.images = @[@"beer1.jpg", @"beer2.jpg"];
+	self.images = @[@"beer1.jpg", @"beer2.jpg", @"beer3.jpg", @"beer4.jpg"];
 	
 	[[Networking networking] getRoutesWithCompletion:^(NSArray *data, NSError *error) {
 		if (!error) {
@@ -71,20 +71,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	IntroTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIndentifier forIndexPath:indexPath];
+	
+	UIColor *tintColor = [UIColor colorWithWhite:0.3 alpha:0.3];
 
+	int randomNumber = [self generateRandomNumberWithlowerBound:0 upperBound:3];
+	
 	if (indexPath.row == 0) {
-		UIImage *backgroundImage = [UIImageEffects imageByApplyingDarkEffectToImage:[UIImage imageNamed:@"headerImage.jpg"]];
+		UIImage *backgroundImage = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:@"headerImage.jpg"] withRadius:30.0 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
 		
 		
 		cell.backgroundImage.image = backgroundImage;
 		cell.titleLabel.text = @"Explore your city";
 	} else {
-		UIImage *backgroundImage = [UIImageEffects imageByApplyingDarkEffectToImage:[UIImage imageNamed:[self.images objectAtIndex:[self generateRandomNumberWithlowerBound:0 upperBound:1]]]];
+		UIImage *backgroundImage = [UIImageEffects imageByApplyingBlurToImage:[UIImage imageNamed:[self.images objectAtIndex:randomNumber]] withRadius:15.0 tintColor:tintColor saturationDeltaFactor:1.8 maskImage:nil];
 		cell.backgroundImage.image = backgroundImage;
 		
 		NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row - 1];
 		cell.titleLabel.text = [dict objectForKey:@"title"];
 	}
+	
+	cell.backgroundImage.contentMode = UIViewContentModeScaleAspectFill;
+	cell.backgroundImage.clipsToBounds = YES;
 	
 	return cell;
 }

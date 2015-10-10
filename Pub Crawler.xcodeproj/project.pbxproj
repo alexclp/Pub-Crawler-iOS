@@ -21,6 +21,8 @@
 		0F37215D1BC92CE400B79A68 /* beer1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F37215C1BC92CE400B79A68 /* beer1.jpg */; settings = {ASSET_TAGS = (); }; };
 		0F37215F1BC92CF000B79A68 /* beer2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F37215E1BC92CF000B79A68 /* beer2.jpg */; settings = {ASSET_TAGS = (); }; };
 		0F3721621BC932D600B79A68 /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3721611BC932D500B79A68 /* RouteViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0F3721641BC93B6000B79A68 /* beer3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F3721631BC93B6000B79A68 /* beer3.jpg */; settings = {ASSET_TAGS = (); }; };
+		0F3721661BC93B6500B79A68 /* beer4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 0F3721651BC93B6500B79A68 /* beer4.jpeg */; settings = {ASSET_TAGS = (); }; };
 		11615BFBE899838ED951B695 /* libPods-Pub Crawler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBE8D20A7401C5DC649C3CF /* libPods-Pub Crawler.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		0F37215E1BC92CF000B79A68 /* beer2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beer2.jpg; sourceTree = "<group>"; };
 		0F3721601BC932D500B79A68 /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
 		0F3721611BC932D500B79A68 /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
+		0F3721631BC93B6000B79A68 /* beer3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beer3.jpg; sourceTree = "<group>"; };
+		0F3721651BC93B6500B79A68 /* beer4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beer4.jpeg; sourceTree = "<group>"; };
 		1EBE8D20A7401C5DC649C3CF /* libPods-Pub Crawler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pub Crawler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1F6E8B958D51F1A49892DD /* Pods-Pub Crawler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pub Crawler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pub Crawler/Pods-Pub Crawler.debug.xcconfig"; sourceTree = "<group>"; };
 		9B719C216989316D204A8F79 /* Pods-Pub Crawler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pub Crawler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pub Crawler/Pods-Pub Crawler.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				0F37214D1BC91CC800B79A68 /* headerImage.jpg */,
 				0F37215C1BC92CE400B79A68 /* beer1.jpg */,
 				0F37215E1BC92CF000B79A68 /* beer2.jpg */,
+				0F3721631BC93B6000B79A68 /* beer3.jpg */,
+				0F3721651BC93B6500B79A68 /* beer4.jpeg */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -338,8 +344,10 @@
 				0F37214E1BC91CC800B79A68 /* headerImage.jpg in Resources */,
 				0F3721291BC9178500B79A68 /* LaunchScreen.storyboard in Resources */,
 				0F37215D1BC92CE400B79A68 /* beer1.jpg in Resources */,
+				0F3721641BC93B6000B79A68 /* beer3.jpg in Resources */,
 				0F3721241BC9178500B79A68 /* Main.storyboard in Resources */,
 				0F37215F1BC92CF000B79A68 /* beer2.jpg in Resources */,
+				0F3721661BC93B6500B79A68 /* beer4.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
