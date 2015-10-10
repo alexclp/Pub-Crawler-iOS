@@ -8,6 +8,8 @@
 
 #import "PubViewController.h"
 
+#define CellIdentifier @"PubCell"
+
 @interface PubViewController ()
 
 @end
@@ -40,6 +42,22 @@
 }
 
 #pragma mark UITableView
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	NSInteger rows = 0;
+	
+	return rows;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+	
+	
+	return cell;
+}
+
 
 
 

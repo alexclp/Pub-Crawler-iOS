@@ -13,6 +13,9 @@
 @property (nonatomic, strong) NSDictionary *pubDetails;
 @property (nonatomic, assign) NSInteger price;
 
+@property (nonatomic, weak) IBOutlet UILabel *priceLabel;
+@property (nonatomic, weak) IBOutlet UILabel *ratingLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *headerImage;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
 @end
