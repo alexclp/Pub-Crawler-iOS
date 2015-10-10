@@ -211,11 +211,30 @@
                         <outlet property="subtitleLabel" destination="bAu-DO-usw" id="VGj-u5-OAk"/>
                         <outlet property="tableView" destination="wFk-pZ-ebz" id="Nwj-VA-dG0"/>
                         <outlet property="titleLabel" destination="bMH-x2-M73" id="5ae-LT-puQ"/>
+                        <segue destination="zJf-kF-VFk" kind="show" identifier="showPubSegue" id="tTb-Yu-RU1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eb-E4-vBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="361" y="361"/>
+        </scene>
+        <!--Pub View Controller-->
+        <scene sceneID="9nX-nk-dgs">
+            <objects>
+                <viewController id="zJf-kF-VFk" customClass="PubViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BND-nh-ULL"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ns-pH-K8b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sKs-J6-wmp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZf-il-DKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="361"/>
         </scene>
     </scenes>
 </document>

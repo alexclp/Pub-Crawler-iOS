@@ -9,6 +9,7 @@
 #import "RouteViewController.h"
 #import "UIImageEffects.h"
 #import "PubTableViewCell.h"
+#import "PubViewController.h"
 
 #define CellIdentifier @"PubCell"
 
@@ -16,6 +17,7 @@
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLLocation *currentLocation;
+@property (nonatomic, assign) NSInteger selectedIndex;
 
 @end
 
@@ -121,6 +123,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	self.selectedIndex = indexPath.row;
+	[self performSegueWithIdentifier:@"showPubSegue" sender:self];
 }
 
 #pragma mark Location Delegate
@@ -128,6 +132,15 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
 	self.currentLocation = [locations lastObject];
 	[self.locationManager stopUpdatingLocation];
+}
+
+#pragma mark Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	if ([segue.identifier isEqualToString:@"showPubSegue"]) {
+		PubViewController *vc = segue.destinationViewController;
+		vc.pubDetails = [[self.routeDetails objectForKey:@"pubs"] objectAtIndex:self.selectedIndex];
+	}
 }
 
 @end

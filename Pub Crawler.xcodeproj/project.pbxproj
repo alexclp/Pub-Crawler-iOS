@@ -26,6 +26,7 @@
 		0F3721691BC94EC800B79A68 /* PubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3721681BC94EC800B79A68 /* PubTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		0F37216B1BC9538A00B79A68 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F37216A1BC9538900B79A68 /* CoreLocation.framework */; };
 		0F37216D1BC954FE00B79A68 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F37216C1BC954FE00B79A68 /* MapKit.framework */; };
+		0F3721701BC963F400B79A68 /* PubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F37216F1BC963F400B79A68 /* PubViewController.m */; settings = {ASSET_TAGS = (); }; };
 		11615BFBE899838ED951B695 /* libPods-Pub Crawler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EBE8D20A7401C5DC649C3CF /* libPods-Pub Crawler.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		0F3721681BC94EC800B79A68 /* PubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubTableViewCell.m; sourceTree = "<group>"; };
 		0F37216A1BC9538900B79A68 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0F37216C1BC954FE00B79A68 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0F37216E1BC963F400B79A68 /* PubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubViewController.h; sourceTree = "<group>"; };
+		0F37216F1BC963F400B79A68 /* PubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubViewController.m; sourceTree = "<group>"; };
 		1EBE8D20A7401C5DC649C3CF /* libPods-Pub Crawler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pub Crawler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1F6E8B958D51F1A49892DD /* Pods-Pub Crawler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pub Crawler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pub Crawler/Pods-Pub Crawler.debug.xcconfig"; sourceTree = "<group>"; };
 		9B719C216989316D204A8F79 /* Pods-Pub Crawler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pub Crawler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pub Crawler/Pods-Pub Crawler.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				0F3721201BC9178500B79A68 /* InitialViewController.m */,
 				0F3721601BC932D500B79A68 /* RouteViewController.h */,
 				0F3721611BC932D500B79A68 /* RouteViewController.m */,
+				0F37216E1BC963F400B79A68 /* PubViewController.h */,
+				0F37216F1BC963F400B79A68 /* PubViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -421,6 +426,7 @@
 				0F3721211BC9178500B79A68 /* InitialViewController.m in Sources */,
 				0F37211E1BC9178500B79A68 /* AppDelegate.m in Sources */,
 				0F3721541BC91EA400B79A68 /* IntroTableViewCell.m in Sources */,
+				0F3721701BC963F400B79A68 /* PubViewController.m in Sources */,
 				0F3721571BC925DD00B79A68 /* UIImageEffects.m in Sources */,
 				0F37211B1BC9178500B79A68 /* main.m in Sources */,
 				0F3721621BC932D600B79A68 /* RouteViewController.m in Sources */,
