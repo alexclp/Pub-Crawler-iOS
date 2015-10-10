@@ -8,6 +8,8 @@
 
 #import "InitialViewController.h"
 
+#define CellIndentifier @"TableViewCell"
+
 @interface InitialViewController ()
 
 @end
@@ -26,6 +28,21 @@
 
 #pragma mark UITableView
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	NSInteger rows = 0;
+	
+	return rows;
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIndentifier];
+	
+	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end
