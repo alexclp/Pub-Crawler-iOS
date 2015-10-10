@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	
+	[self configureHeader];
+	[self configureDetails];
 	self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
 	[self.navigationController.navigationBar setBackgroundImage:nil
 												  forBarMetrics:UIBarMetricsDefault];
@@ -27,7 +28,24 @@
 	self.navigationController.navigationBar.translucent = NO;
 	self.navigationController.navigationBar.tintColor = [UIColor blackColor];
 	
-	[self configureHeader];
+
+}
+
+- (void)configureDetails {
+	int price = [[self.pubDetails objectForKey:@"price"] intValue];
+	NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"$$$$$"];
+	[text addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, price)];
+	[text addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(price, text.length - price)];
+	
+	self.priceLabel.attributedText = text;
+	NSMutableString *ratingString = [NSMutableString string];
+	
+	for (int i = 0; i < [[self.pubDetails objectForKey:@"rating"] intValue] ; ++i) {
+		[ratingString appendString:@"*"];
+	}
+	self.ratingLabel.text = ratingString.copy;
+	self.description.text = [self.pubDetails objectForKey:@"description"];
+	
 }
 
 - (void)configureHeader {
@@ -40,25 +58,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark UITableView
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSInteger rows = 0;
-	
-	return rows;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
-	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-
-	
-	
-	return cell;
-}
-
-
 
 
 @end

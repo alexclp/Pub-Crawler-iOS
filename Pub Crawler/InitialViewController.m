@@ -27,24 +27,14 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
-	[self.navigationController.navigationBar setBackgroundImage:nil
-												  forBarMetrics:UIBarMetricsDefault];
-	self.navigationController.navigationBar.shadowImage = nil;
-	self.navigationController.navigationBar.translucent = NO;
-	self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-	
-	
+	self.navigationItem.title = @"PubCrawler";
+	self.navigationItem.backBarButtonItem.title = @" ";
 }
 
 - (void)viewDidLoad {
 	[super viewDidLoad];	
 	// Do any additional setup after loading the view, typically from a nib.
 
-	 
-	self.title = @"Pub Crawler";
-	
 	self.images = @[@"beer1.jpg", @"beer2.jpg", @"beer3.jpg", @"beer4.jpg"];
 	
 	[[Networking networking] getRoutesWithCompletion:^(NSArray *data, NSError *error) {
