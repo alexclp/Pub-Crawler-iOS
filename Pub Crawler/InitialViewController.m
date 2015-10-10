@@ -7,6 +7,7 @@
 //
 
 #import "InitialViewController.h"
+#import "IntroTableViewCell.h"
 
 #define CellIndentifier @"TableViewCell"
 
@@ -19,6 +20,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
+	self.title = @"Pub Crawler";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,33 +32,50 @@
 #pragma mark UITableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSInteger rows = 0;
-	
-	return rows;
+
+	return 2;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == 0) {
+		return 235;
+	}
+	return 113;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	IntroTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIndentifier forIndexPath:indexPath];
 	
-	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIndentifier];
-	
+	cell.backgroundImage.image = [UIImage imageNamed:@"headerImage.jpg"];
+	cell.titleLabel.text = @"BEER";
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
+/*
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-	if (section == 0) {
-		UIImage *image = [UIImage imageNamed:@"headerImage.jpg"];
-		UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-		imageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 235);
-		imageView.contentMode = UIViewContentModeScaleAspectFill;
-		
-		return imageView;
-	}
-
-	return nil;
+	
+	UIImage *myImage = [UIImage imageNamed:@"headerImage.jpg"];
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:myImage];
+	imageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 235);
+	
+	return imageView;
+	
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 235;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	CGFloat sectionHeaderHeight = 337;//Change as per your table header height
+	if (scrollView.contentOffset.y <= sectionHeaderHeight&&scrollView.contentOffset.y >= 0) {
+		scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+	} else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
+		scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+	}
+}
+*/
 @end

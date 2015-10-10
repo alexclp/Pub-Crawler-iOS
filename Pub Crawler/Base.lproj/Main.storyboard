@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UVU-J6-w8X">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -33,21 +34,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xQi-DN-Php">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xbm-U2-g1t">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" id="xbm-U2-g1t" customClass="IntroTableViewCell">
                                         <rect key="frame" x="0.0" y="92" width="600" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xbm-U2-g1t" id="22M-KZ-cXx">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhs-gQ-o8S">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mhs-gQ-o8S">
                                                     <rect key="frame" x="8" y="0.0" width="584" height="112"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6g-Yi-LUl">
+                                                    <rect key="frame" x="8" y="45" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="leading" secondItem="mhs-gQ-o8S" secondAttribute="leading" id="0TN-8m-sCg"/>
+                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="trailing" secondItem="22M-KZ-cXx" secondAttribute="trailingMargin" id="MMl-d9-6sZ"/>
+                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="centerY" secondItem="mhs-gQ-o8S" secondAttribute="centerY" id="S91-eq-qb3"/>
+                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="trailing" secondItem="mhs-gQ-o8S" secondAttribute="trailing" id="VXc-YZ-mia"/>
+                                                <constraint firstItem="mhs-gQ-o8S" firstAttribute="top" secondItem="22M-KZ-cXx" secondAttribute="top" id="W8u-dK-93T"/>
+                                                <constraint firstAttribute="bottom" secondItem="mhs-gQ-o8S" secondAttribute="bottom" id="dcf-53-ePv"/>
+                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="top" secondItem="22M-KZ-cXx" secondAttribute="topMargin" constant="37" id="gNr-s4-7Tz"/>
+                                                <constraint firstItem="B6g-Yi-LUl" firstAttribute="leading" secondItem="22M-KZ-cXx" secondAttribute="leadingMargin" id="sWy-MU-cDv"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="backgroundImage" destination="mhs-gQ-o8S" id="iGn-nE-wBg"/>
+                                            <outlet property="titleLabel" destination="B6g-Yi-LUl" id="cqn-vR-8vC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -58,10 +79,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xQi-DN-Php" secondAttribute="trailing" id="0Uh-he-gkg"/>
-                            <constraint firstItem="xQi-DN-Php" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2en-DL-bC8"/>
-                            <constraint firstItem="xQi-DN-Php" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Iif-KH-XOK"/>
-                            <constraint firstItem="xQi-DN-Php" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="mxp-X6-zif"/>
+                            <constraint firstAttribute="trailing" secondItem="xQi-DN-Php" secondAttribute="trailing" id="43h-7v-uiH"/>
+                            <constraint firstItem="xQi-DN-Php" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5JQ-Iw-L7d"/>
+                            <constraint firstItem="xQi-DN-Php" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Z8c-PT-7we"/>
+                            <constraint firstItem="xQi-DN-Php" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zHF-Ji-qeF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tUO-tH-Iz5"/>
