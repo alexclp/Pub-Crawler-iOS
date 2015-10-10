@@ -25,7 +25,15 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+
+	/*
 	
+	[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+							 forBarMetrics:UIBarMetricsDefault];
+	self.navigationController.navigationBar.shadowImage = [UIImage new];
+	self.navigationController.navigationBar.translucent = YES;
+	*/
+	 
 	self.title = @"Pub Crawler";
 	
 	self.images = @[@"beer1.jpg", @"beer2.jpg"];
@@ -75,7 +83,6 @@
 		cell.backgroundImage.image = backgroundImage;
 		cell.titleLabel.text = @"Explore your city";
 	} else {
-		NSLog(@"aaaaa");
 		UIImage *backgroundImage = [UIImageEffects imageByApplyingDarkEffectToImage:[UIImage imageNamed:[self.images objectAtIndex:[self generateRandomNumberWithlowerBound:0 upperBound:1]]]];
 		cell.backgroundImage.image = backgroundImage;
 		
