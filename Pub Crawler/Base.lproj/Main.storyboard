@@ -110,15 +110,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7DE-y9-e7a">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMH-x2-M73">
-                                <rect key="frame" x="0.0" y="20" width="600" height="62"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="2Jh-Pz-FsS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAu-DO-usw">
                                 <rect key="frame" x="0.0" y="90" width="600" height="60"/>
                                 <constraints>
@@ -187,6 +178,15 @@
                                     <outlet property="delegate" destination="jqf-6r-djj" id="vs8-Ko-46u"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMH-x2-M73">
+                                <rect key="frame" x="0.0" y="12" width="600" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="2Jh-Pz-FsS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -195,10 +195,10 @@
                             <constraint firstItem="bAu-DO-usw" firstAttribute="trailing" secondItem="bMH-x2-M73" secondAttribute="trailing" id="DgY-lB-Y5R"/>
                             <constraint firstItem="wFk-pZ-ebz" firstAttribute="top" secondItem="7DE-y9-e7a" secondAttribute="bottom" constant="8" symbolic="YES" id="I3Z-7W-ORo"/>
                             <constraint firstItem="wFk-pZ-ebz" firstAttribute="trailing" secondItem="bAu-DO-usw" secondAttribute="trailing" id="MYm-iQ-Cbq"/>
-                            <constraint firstItem="bAu-DO-usw" firstAttribute="top" secondItem="bMH-x2-M73" secondAttribute="bottom" constant="8" symbolic="YES" id="P51-yx-Sgk"/>
+                            <constraint firstItem="bAu-DO-usw" firstAttribute="top" secondItem="bMH-x2-M73" secondAttribute="bottom" constant="16" id="P51-yx-Sgk"/>
                             <constraint firstItem="bAu-DO-usw" firstAttribute="leading" secondItem="bMH-x2-M73" secondAttribute="leading" id="Ufn-fH-2Vn"/>
                             <constraint firstItem="wFk-pZ-ebz" firstAttribute="top" secondItem="bAu-DO-usw" secondAttribute="bottom" constant="8" symbolic="YES" id="Vaz-fZ-YCI"/>
-                            <constraint firstItem="bMH-x2-M73" firstAttribute="top" secondItem="zKu-DE-3XX" secondAttribute="top" constant="20" symbolic="YES" id="XR0-X6-Syb"/>
+                            <constraint firstItem="bMH-x2-M73" firstAttribute="top" secondItem="zKu-DE-3XX" secondAttribute="top" constant="12" id="XR0-X6-Syb"/>
                             <constraint firstItem="bMH-x2-M73" firstAttribute="leading" secondItem="zKu-DE-3XX" secondAttribute="leading" id="b4p-5Z-HBP"/>
                             <constraint firstItem="7DE-y9-e7a" firstAttribute="trailing" secondItem="bAu-DO-usw" secondAttribute="trailing" id="e87-sv-QKo"/>
                             <constraint firstItem="7DE-y9-e7a" firstAttribute="top" secondItem="zKu-DE-3XX" secondAttribute="top" id="kwU-SG-mrL"/>

@@ -18,6 +18,7 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLLocation *currentLocation;
 @property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, assign) NSInteger selectedPrice;
 
 @end
 
@@ -104,11 +105,11 @@
 	
 	int price = 0;
 	
-	if ([currentPub objectForKey:@"price"]) {
+//	if ([currentPub objectForKey:@"price"]) {
 		price = [[currentPub objectForKey:@"price"] intValue];
-	} else {
-		price = [self generateRandomNumberWithlowerBound:0 upperBound:4];
-	}	
+//	} else {
+//		price = [self generateRandomNumberWithlowerBound:0 upperBound:4];
+//	}
 	
 	NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"$$$$$"];
 	[text addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, price)];

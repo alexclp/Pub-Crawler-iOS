@@ -11,5 +11,6 @@
 @interface PubViewController : UINavigationController
 
 @property (nonatomic, strong) NSDictionary *pubDetails;
+@property (nonatomic, assign) NSInteger price;
 
 @end
